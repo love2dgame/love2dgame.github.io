@@ -3,8 +3,9 @@ extends Control
 var lable:Label
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	lable = $VBoxContainer/Labelpass
+	lable = $VBoxContainer/Label
 	load_game()
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -22,6 +23,7 @@ func load_game():
 	var save_game = FileAccess.open("user://savegame.save", FileAccess.READ)
 	var line = save_game.get_line()
 	lable.text = line+"(load)"
+	print("load_game:"+line)
 
 func _on_button_button_down():
 	lable.text = "AAAA"
